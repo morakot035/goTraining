@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:14-alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - .local/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=foodappdb
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - PGDATA=/var/lib/postgresql/data/
